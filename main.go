@@ -126,8 +126,8 @@ func (m model) View() string {
 	for i := 0; i < B.GRID_HEIGHT; i++ {
 		for k := 0; k < 3; k++ {
 			for j := 0; j < B.GRID_WIDTH; j++ {
-				board += styleCellBorder.Render("┃")
 				if k != 2 {
+					board += styleCellBorder.Render("┃")
 					switch m.gameBoard.Grid[i][j] {
 					case B.BLANK:
 						board += styleCell.Render("    ")
@@ -137,6 +137,11 @@ func (m model) View() string {
 						board += styleCellPlayerTwo.Render("████")
 					}
 				} else {
+					if j == 0 {
+						board += styleCellBorder.Render("┣")
+					} else {
+						board += styleCellBorder.Render("╋")
+					}
 					board += styleCellBorder.Render("━━━━")
 				}
 			}
