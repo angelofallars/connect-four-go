@@ -63,7 +63,7 @@ func (g *GameBoard) DropDisc(column uint8, player Player) error {
 
 		if is_cell_filled || is_bottom_cell {
 			if i == -1 {
-				return ErrColOutOfRange
+				return ErrFilledBoard
 			}
 
 			switch player {
