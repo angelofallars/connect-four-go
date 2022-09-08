@@ -68,9 +68,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
-var colorPlayerOne = "#E8E373"
-var colorPlayerTwo = "#E87A73"
-var colorWhite = "#BBBBBB"
+var colorPlayerOne = "#F5FF3E"
+var colorPlayerTwo = "#FE3333"
+var colorWhite = "#DDDDDD"
 var colorBlack = "#333333"
 
 var styleTopBar = lipgloss.NewStyle().
