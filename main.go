@@ -160,6 +160,10 @@ func (m model) View() string {
 
 	s += board
 
+	s += "\n\n"
+
+	s += "h, left  -  l, right  -  j, place disc"
+
 	return s
 }
 
