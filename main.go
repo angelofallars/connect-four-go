@@ -68,40 +68,40 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
-var colorPlayerOne = "#F5FF3E"
-var colorPlayerTwo = "#FE3333"
-var colorWhite = "#DDDDDD"
-var colorBlack = "#333333"
+var colorPlayerOne = lipgloss.Color("#F5FF3E")
+var colorPlayerTwo = lipgloss.Color("#FE3333")
+var colorWhite = lipgloss.Color("#DDDDDD")
+var colorBlack = lipgloss.Color("#333333")
 
 var styleTopBar = lipgloss.NewStyle().
 	Bold(true).
 	Padding(0, 1).
 	MarginBottom(1).
 	MarginLeft(10).
-	Foreground(lipgloss.Color(colorBlack))
+	Foreground(colorBlack)
 
 var stylePlayerOne = styleTopBar.Copy().
-	Background(lipgloss.Color(colorPlayerOne))
+	Background(colorPlayerOne)
 
 var stylePlayerTwo = styleTopBar.Copy().
-	Background(lipgloss.Color(colorPlayerTwo))
+	Background(colorPlayerTwo)
 
 var styleCell = lipgloss.NewStyle().
-	Background(lipgloss.Color(colorWhite))
+	Background(colorWhite)
 
 var styleCellPlayerOne = styleCell.Copy().
-	Foreground(lipgloss.Color(colorPlayerOne))
+	Foreground(colorPlayerOne)
 
 var styleCellPlayerTwo = styleCell.Copy().
-	Foreground(lipgloss.Color(colorPlayerTwo))
+	Foreground(colorPlayerTwo)
 
 var styleCellBorder = styleCell.Copy().
-	Foreground(lipgloss.Color(colorBlack))
+	Foreground(colorBlack)
 
 var styleBoard = styleCell.Copy().
 	BorderStyle(lipgloss.RoundedBorder()).
-	BorderBackground(lipgloss.Color(colorWhite)).
-	BorderForeground(lipgloss.Color(colorBlack))
+	BorderBackground(colorWhite).
+	BorderForeground(colorBlack)
 
 func (m model) View() string {
 	s := ""
