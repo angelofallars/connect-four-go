@@ -2,7 +2,6 @@ package lib
 
 import (
 	"errors"
-	"fmt"
 )
 
 type GameBoard struct {
@@ -78,24 +77,4 @@ func (g *GameBoard) DropDisc(column uint8, player Player) error {
 	}
 
 	return nil
-}
-
-func (g *GameBoard) Display() {
-	for i := 0; i < GRID_HEIGHT; i++ {
-		for j := 0; j < GRID_WIDTH; j++ {
-			var symbol rune
-
-			switch g.Grid[i][j] {
-			case BLANK:
-				symbol = '⬜'
-			case YELLOW:
-				symbol = '🟡'
-			case RED:
-				symbol = '🔴'
-			}
-
-			fmt.Printf("%v", string(symbol))
-		}
-		fmt.Printf("\n")
-	}
 }
